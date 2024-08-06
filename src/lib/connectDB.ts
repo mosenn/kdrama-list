@@ -1,9 +1,20 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function connectDB() {
   try {
+    // console.log(process.env.DB_USER, "db url");
+    // console.log({
+    //   username: process.env.DB_USER,
+    //   password: process.env.DB_PASS,
+    // });
+    // console.log(
+    //   `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zutazhf.mongodb.net/kdrama`
+    // );
     await mongoose.connect(
-      "mongodb+srv://fatemeghafari77:NoERisX99wBrN4Bl@cluster0.xhmztka.mongodb.net/?retryWrites=true&w=majority"
+      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zutazhf.mongodb.net/kdrama`
     );
     // await mongoose.connect(process.env.MONGO_URI);
     console.log("connect to DB");
@@ -14,9 +25,3 @@ async function connectDB() {
 }
 
 export default connectDB;
-
-
-
-
-
-

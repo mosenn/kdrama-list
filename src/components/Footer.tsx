@@ -33,7 +33,7 @@ const Footer = () => {
           <ul className="flex justify-start items-center gap-x-3 ">
             <li className="hover:text-indigo-600 transition-all">
               <a
-                href="https://t.me/fatemeweb"
+                href="https://t.me/Mohi_ABa"
                 target="_blank"
                 rel="noreferrer"
                 // className='element-hover'
@@ -44,7 +44,7 @@ const Footer = () => {
 
             <li className="hover:text-indigo-600 transition-all">
               <a
-                href="https://www.instagram.com/fatemeweb/"
+                href="https://www.instagram.com/webdesignlearn/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -54,7 +54,7 @@ const Footer = () => {
 
             <li className="hover:text-indigo-600 transition-all">
               <a
-                href="https://www.linkedin.com/in/https://www.linkedin.com/in/mohsen-abbas-web-developer/"
+                href="https://www.linkedin.com/in/mohsen-abbas-web-developer/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -64,7 +64,7 @@ const Footer = () => {
 
             <li className="hover:text-indigo-600 transition-all">
               <a
-                href="https://github.com/mosenn"
+                href="https://github.com/mosenn/kdrama-list"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -81,7 +81,7 @@ const Footer = () => {
           <nav className="list-none flex flex-col gap-y-1">
             <li>
               <a
-                href="https://github.com/mosenn/kdrama"
+                href="https://github.com/mosenn/kdrama-list"
                 className="cursor-pointer element-hover"
               >
                 Git
