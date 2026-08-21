@@ -97,7 +97,7 @@ export const authOptions = {
       return session;
     },
     async signIn({ user }: { user: any }) {
-      console.log("inside callback - authOptions / user " ,user);
+      console.log("inside callback - authOptions / user ", user);
 
       await connectDB();
       console.log("connected", user);

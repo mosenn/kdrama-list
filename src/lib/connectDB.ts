@@ -1,26 +1,25 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 async function connectDB() {
   try {
-    // console.log(process.env.DB_USER, "db url");
-    // console.log({
-    //   username: process.env.DB_USER,
-    //   password: process.env.DB_PASS,
-    // });
-    // console.log(
-    //   `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zutazhf.mongodb.net/kdrama`
-    // );
-    await mongoose.connect(
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zutazhf.mongodb.net/kdrama`
-    );
-    // await mongoose.connect(process.env.MONGO_URI);
-    console.log("connect to DB");
+    const databaseUrl = process.env.DATABASE_URL;
+
+    if (!databaseUrl) {
+      throw new Error("DATABASE_URL is not defined in .env.local");
+    }
+
+    // اگر قبلاً اتصال برقرار شده، مجدد connect نکن
+    if (mongoose.connection.readyState === 1) {
+      console.log("MongoDB is already connected");
+      return;
+    }
+
+    await mongoose.connect(databaseUrl);
+
+    console.log("Connected to MongoDB successfully");
   } catch (error) {
-    console.log("error mongo--->", error);
-    // throw new Error("Connection failed!");
+    console.error("MongoDB connection error:", error);
+    throw error;
   }
 }
 
